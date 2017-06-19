@@ -1,0 +1,20 @@
+body {
+    margin: 20em 0em 0em 0em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column nowrap;
+}
+
+a {
+    position: relative;
+    top: 1em;
+}
+a:link {
+    text-decoration: none;
+    color: darkorchid;
+}
+
+a:hover {
+    color: crimson;
+}

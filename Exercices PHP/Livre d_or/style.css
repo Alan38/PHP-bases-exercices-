@@ -1,0 +1,24 @@
+body {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    flex-flow: column nowrap;
+}
+
+span {
+    position: relative;
+    bottom: 2.9em;
+}
+
+a {
+    position: relative;
+    top: 1em;
+}
+a:link {
+    text-decoration: none;
+    color: darkorchid;
+}
+
+a:hover {
+    color: crimson;
+}
