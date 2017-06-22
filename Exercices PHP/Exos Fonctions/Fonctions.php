@@ -93,4 +93,49 @@ echo '<br>';
     }
 
     salut_a_tous($tous);
+
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+
+
+    $table = array(
+        '1x9' => '9',
+        '2x9' => '18', 
+        '3x9' => '27', 
+        '4x9' => '36', 
+        '5x9' => '45', 
+        '6x9' => '54', 
+        '7x9' => '63', 
+        '8x9' => '72', 
+        '9x9' => '81', 
+        '10x9' => '90');
+
+    function liste_deroulante($table)
+    {
+        foreach ($table as $multi => $result)
+        {
+            echo '<form>
+                 <select name="table_multiplication9">
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 <option value="' .$multi. '">' .$result. '</option>
+                 </select>
+                 </form>';
+                 
+        }
+        
+    }
+
+    liste_deroulante($table);
 ?>
