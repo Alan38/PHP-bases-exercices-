@@ -118,23 +118,11 @@ echo '<br>';
     {
         foreach ($table as $multi => $result)
         {
-            echo '<form>
-                 <select name="table_multiplication9">
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 <option value="' .$multi. '">' .$result. '</option>
-                 </select>
-                 </form>';
-                 
+            echo '<select name="table_multiplication9">
+                 <option></option>
+                 <option value="' .$multi. '">'.$multi.'</option>
+                 </select>';
         }
-        
     }
 
     liste_deroulante($table);
