@@ -113,17 +113,61 @@ echo '<br>';
         '8x9' => '72', 
         '9x9' => '81', 
         '10x9' => '90');
-
-    function liste_deroulante($table)
+    function liste_deroulante($table, $name)
     {
         foreach ($table as $multi => $result)
         {
-            echo '<select name="table_multiplication9">
+            echo '<select name="' .$name. '">
                  <option></option>
-                 <option value="' .$multi. '">'.$multi.'</option>
+                 <option value="' .$multi. '">'.$result.'</option>
                  </select>';
         }
     }
 
-    liste_deroulante($table);
+    liste_deroulante($table, 'table_multiplication9');
+
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+
+    $tableau_entiers = array(4, 5, 19, 4, 0, -1, 8);
+    function contains($tableau_entiers, $entier, $strict = false)
+    {
+        if (in_array($entier, $tableau_entiers, true))
+        {
+            echo 'true';  
+        }
+        
+        else
+        {
+            echo 'false';
+        }
+    }
+        
+    contains($tableau_entiers, 'Quatre');
+
+
+
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+
+
+    $tableau_entiers = array(5, 8, 3, 5, 9);
+    /* $tableau_entiers = array(5, 5, 5, 5); */
+    /* $tableau_entiers = array(2); */
+    /* $tableau_entiers = array(-9, -7, -2, -4); */
+    function maximum($tableau_entiers)
+    {
+        $max = max($tableau_entiers);
+        echo 'Le plus grand nombre dans ce tableau est ' .$max;
+    }
+
+    maximum($tableau_entiers);
 ?>
