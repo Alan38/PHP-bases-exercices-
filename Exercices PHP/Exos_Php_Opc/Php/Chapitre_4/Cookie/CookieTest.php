@@ -1,6 +1,8 @@
 <?php
 
 // setcookie('pseudo', 'Alan', time() + 365*24*3600); Déclaration d'un cookie non sécurisé
+
+// Déclaration d'un cookie sécurisé
 setcookie('pseudo', 'Alan', time() + 365*24*3600, null, null, false, true); // On écrit un cookie
 setcookie('pays', 'France', time() + 365*24*3600, null, null, false, true); // On écrit un autre cookie...
 
