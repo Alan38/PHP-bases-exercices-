@@ -28,7 +28,7 @@ echo 'Le jeu a bien été enregistré !';
 // Modifier des données dans la BDD
 
 // On prepare la requete
-$req = $bdd->prepare('UPDATE jeux_video SET prix = :newPrix, nbre_joueurs_max = new_nbre_joueurs_max WHERE nom = :nom_jeu');
+$req = $bdd->prepare('UPDATE jeux_video SET prix = :newPrix, nbre_joueurs_max = :new_nbre_joueurs_max WHERE nom = :nom_jeu');
 // On insert les données voulu dans le tableau
 $req->execute(array(
             'newPrix' => $newPrix,
