@@ -1,0 +1,1 @@
+<a href="bonjour.php?nom=Lazzarotto&amp;prenom=Alan&amp;repeter=15">Dis-moi bonjour !</a>
