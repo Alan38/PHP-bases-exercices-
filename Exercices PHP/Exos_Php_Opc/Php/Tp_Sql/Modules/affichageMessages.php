@@ -7,7 +7,7 @@
             
     // On affiche les messages
     while ($donnees = $req->fetch()) {
-        echo '<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> a posté le <strong>' . $donnees['dateFr'] . '</strong>:<br> ' . htmlspecialchars($donnees['message']) . '</p>'; 
+        echo '<p>[' . $donnees['dateFr'] . '] <strong>' . htmlspecialchars($donnees['pseudo']) . '</strong>  : <br> ' . htmlspecialchars($donnees['message']) . '</p>'; 
     }
         
     // On ferme la requet Sql
