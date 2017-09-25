@@ -1,7 +1,10 @@
 <?php
 require 'class_form.php';
+require 'text.php';
 
 $form = new Form($_POST);
+
+var_dump(Text::withZero(4));
 
 ?>
 
@@ -14,9 +17,3 @@ $form = new Form($_POST);
     
     ?>
 </form>
-<?php
-        
-        $form->traitement($_POST['username'], $_POST['password']);
-
-
-?>
