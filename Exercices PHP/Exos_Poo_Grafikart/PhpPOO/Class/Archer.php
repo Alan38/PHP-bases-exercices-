@@ -1,14 +1,20 @@
 <?php
+
+namespace Alan;
+
 /**
 * Class Archer
 * Extension de la class Personnage
 */
 class Archer extends Personnage{
-
     /**
     * @var $vie int, points de vie
     */
-    protected $vie = 60;
+    
+    public function __construct($nom) {
+        $this->vie = $this->vie / 2;
+        parent::__construct($nom);
+    }
     
     /**
     * @param $cible array, objet contenant les données d'un personnage

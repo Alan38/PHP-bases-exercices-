@@ -1,4 +1,7 @@
 <?php
+
+namespace Alan;
+
 /**
 * Class Text
 * Permet de faire passer un nombre a 1 chiffre, a un nombre a 2 chiffres

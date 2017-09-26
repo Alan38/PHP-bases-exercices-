@@ -1,4 +1,7 @@
 <?php
+
+namespace Alan;
+
 // creation de l'objet modèle personnage
 class Personnage {
     
