@@ -39,7 +39,7 @@ class Program {
 			));
 			$donnees = $req->fetch();
 
-			return 'Référence : ' . $donnees['ref'] . '<br/>Nom : ' . $donnees['nom'] . '<br/>Prix : ' . $donnees['prix'] . '<br/>Quantité : ' . $donnees['qte'] . '<br/><br/>';
+			echo 'Référence : ' . $donnees['ref'] . '<br/>Nom : ' . $donnees['nom'] . '<br/>Prix : ' . $donnees['prix'] . '<br/>Quantité : ' . $donnees['qte'] . '<br/><br/>';
 
 			$req->closeCursor();
 		}
@@ -58,10 +58,22 @@ class Program {
 			));
 			$donnees = $req->fetch();
 
-			return 'Référence : ' . $donnees['ref'] . '<br/>Nom : ' . $donnees['nom'] . '<br/>Prix : ' . $donnees['prix'] . '<br/>Quantité : ' . $donnees['qte'] . '<br/><br/>';
+			echo 'Référence : ' . $donnees['ref'] . '<br/>Nom : ' . $donnees['nom'] . '<br/>Prix : ' . $donnees['prix'] . '<br/>Quantité : ' . $donnees['qte'] . '<br/><br/>';
 
 			$req->closeCursor();
 
+		}
+		catch(Exception $e) {
+			die('Erreur :' . $e->getMessage());
+		}
+	}
+
+	public function searchByPrice($prix) {
+		try {
+			$db = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbName . ';charset=utf8', $this->user, $this->mdp);
+
+			$req = $db->prepare('SELECT * FROM Articles');
+			$req->execute();
 		}
 		catch(Exception $e) {
 			die('Erreur :' . $e->getMessage());
@@ -77,7 +89,7 @@ class Program {
 				'ref' => $ref,
 			));
 
-			return 'L\'article n° ' . $ref . ' à bien été supprimé !<br/><br/>';
+			echo 'L\'article n° ' . $ref . ' à bien été supprimé !<br/><br/>';
 		}
 		catch(Exception $e) {
 			die('Erreur :' . $e->getMessage());
@@ -96,7 +108,25 @@ class Program {
 				'ref' => $ref,
 			));
 
-			return 'L\'article a bien été modifié avec les valeurs suivantes :<br/>Référence : ' . $ref . '<br/>Nom : ' . $nom . '<br/>Prix : ' . $prix . '<br/>Quantité : ' . $qte . '<br/><br/>';
+			echo 'L\'article a bien été modifié avec les valeurs suivantes :<br/>Référence : ' . $ref . '<br/>Nom : ' . $nom . '<br/>Prix : ' . $prix . '<br/>Quantité : ' . $qte . '<br/><br/>';
+		}
+		catch(Exception $e) {
+			die('Erreur :' . $e->getMessage());
+		}
+	}
+
+	public function listing() {
+		try {
+			$db = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbName . ';charset=utf8', $this->user, $this->mdp);
+
+			$req = $db->prepare('SELECT * FROM Articles');
+			$req->execute();
+
+			while ($donnees = $req->fetch()) {
+				echo 'Référence : ' . $donnees['ref'] . '<br/>Nom : ' . $donnees['nom'] . '<br/>Prix : ' . $donnees['prix'] . '<br/>Quantité : ' . $donnees['qte'] . '<br/><br/>';
+			}
+
+			$req->closeCursor();
 		}
 		catch(Exception $e) {
 			die('Erreur :' . $e->getMessage());
@@ -105,5 +135,5 @@ class Program {
 }
 
 $gestion = new Program();
-
+$gestion->listing();
 ?>
