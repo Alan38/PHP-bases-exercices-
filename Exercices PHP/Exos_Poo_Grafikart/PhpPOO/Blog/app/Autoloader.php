@@ -1,6 +1,6 @@
 <?php
 
-namespace Alan;
+namespace App;
 
 class Autoloader {
     
@@ -12,7 +12,7 @@ class Autoloader {
         if (strpos($className, __NAMESPACE__. '\\') === 0) {
             $className = str_replace(__NAMESPACE__ . '\\', '', $className);
             $className = str_replace('\\', '/', $className);
-            require 'Class/' . $className . '.php';
+            require __DIR__ . '/' . $className . '.php';
         }
     }
 }
