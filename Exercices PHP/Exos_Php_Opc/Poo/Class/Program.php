@@ -9,8 +9,8 @@ class Program {
 	private $user = 'root';
 	private $mdp = 'alan38160';
 
-	public function __construct() {
 
+	public function __construct() {
 	}
 
 	public function stock($article) {
